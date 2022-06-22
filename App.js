@@ -1,37 +1,44 @@
-import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from "react-native";
+import React, { useState } from "react";
 
-export default function App() {
-  const [name, setName] = useState("omouri")
-  const [person, setPerson] = useState({ name: "omouri", age: 70 })
-  const handleClick = () => {
-    setName("wassim ta3eb")
-    setPerson({name:"ali at3eb mennou",age:26})
-  }
+const App = () => {
+  const [people, setPeople] = useState([
+    { name: "shaun", id: "1" },
+    { name: "yoshi", id: "2" },
+    { name: "mario", id: "3" },
+    { name: "luigi", id: "4" },
+    { name: "peach", id: "5" },
+    { name: "toad", id: "6" },
+    { name: "bowser", id: "7" },
+  ]);
   return (
     <View style={styles.container}>
-      <Text>mY NAME IS {name}</Text>
-      <Text>Open up App.js to start working on your app!!!!</Text>
-      <Text>His name is name is {person.name} and his age is {person.age}</Text>
-      <View style={styles.btn__wrapper}>
-        <Button title='update the state' onPress={handleClick} />
-      </View>
-      <StatusBar style="auto" />
+      <ScrollView>
+        {people.map((item) => (
+          <View key={item.id}>
+            <Text style={styles.item}>{item.name}</Text>
+          </View>
+        ))}
+      </ScrollView>
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: 40,
+    paddingHorizontal: 20,
+    backgroundColor: "#fff",
   },
-  btn__wrapper:{
-  backgroundColor: "purple",
-  marginTop:20
-
-}
+  item: {
+    flex: 1,
+    marginHorizontal: 10,
+    marginTop: 24,
+    padding: 30,
+    backgroundColor: "pink",
+    fontSize: 24,
+  },
 });
