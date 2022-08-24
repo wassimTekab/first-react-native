@@ -6,6 +6,7 @@ import ExploreScreen from "./screens/ExploreScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import RestaurantsScreen from "./screens/RestaurantsScreen";
 import RestaurantScreen from "./screens/RestaurantScreen";
+import DragSort from "./screens/DragSort";
 export type RootStackParams = {
   Restaurants: undefined;
   Explore: undefined;
@@ -35,6 +36,7 @@ const App = () => {
         <RootStack.Screen name="Restaurants" component={RestaurantsScreen} />
         <RootStack.Screen name="Profile" component={ProfileScreen} />
         <RootStack.Screen name="Restaurant" component={RestaurantScreen} />
+        <RootStack.Screen name="DragSort" component={DragSort} />
       </RootStack.Navigator>
     </NavigationContainer>
   );

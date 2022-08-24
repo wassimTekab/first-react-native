@@ -34,6 +34,14 @@ const Menu = () => {
       >
         <Text style={styles.link}>Profile</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          // go to profile
+          navigate("DragSort");
+        }}
+      >
+        <Text style={styles.link}>DragSort</Text>
+      </TouchableOpacity>
     </View>
   );
 };
